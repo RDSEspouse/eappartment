@@ -1,0 +1,55 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+       "http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+<tiles-definitions>
+	<definition name="base" path="/base-layout.jsp">
+		<put name="header" value="/base-header.jsp" />
+		<put name="content" value="/base-content.jsp" />
+		<put name="footer" value="/base-footer.jsp" />
+	</definition>
+	<definition extends="base" name="regd.registration">
+		<put name="content" value="/regd/register.jsp" />
+	</definition>
+	
+	<definition name="master-layout" path="/master-content.jsp">
+		<put name="left-panel" value="master-left-panel.jsp" />
+		<put name="right-panel" value="master-right-panel.jsp" />
+	</definition>
+	<definition extends="master-layout" name="flat-owner-form">
+		<put name="right-panel" value="/regd/masterHomeAdd_FlatOwners.jsp" />
+	</definition>
+	<definition extends="master-layout" name="flat-tenant-form">
+		<put name="right-panel" value="/regd/masterHomeAdd_Tenant.jsp" />
+	</definition>
+	<definition extends="master-layout" name="flat-domestichelper-form">
+		<put name="right-panel" value="/regd/masterHomeAdd_Helper.jsp" />
+	</definition>
+	
+	<definition extends="master-layout" name="default-success">
+		<put name="right-panel" value="default-success.html" />
+	</definition>
+	<definition extends="master-layout" name="default-error">
+		<put name="right-panel" value="default-error.html" />
+	</definition>
+	
+	<definition extends="base" name="master-content">
+		<put name="content" value="master-layout" />
+	</definition>
+	<definition extends="master-content" name="regd.flat-owner-form">
+		<put name="content" value="flat-owner-form" />
+	</definition>
+	<definition extends="master-content" name="regd.flat-tenant-form">
+		<put name="content" value="flat-tenant-form" />
+	</definition>
+	<definition extends="master-content" name="regd.flat-domestichelper-form">
+		<put name="content" value="flat-domestichelper-form" />
+	</definition>
+	
+	<definition extends="master-content" name="master-success">
+		<put name="content" value="default-success" />
+	</definition>
+	<definition extends="master-content" name="master-error">
+		<put name="content" value="default-error" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 5, 2014 11:23:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+	<class name="com.espousetechnology.eappartment.mapping.regd.Userdetails"
+		table="userdetails" catalog="apartmentdb">
+		<id name="userId" type="string">
+			<column name="userId" length="40" />
+			<generator class="assigned" />
+		</id>
+		<property name="userType" type="string">
+			<column name="userType" length="20" not-null="true" />
+		</property>
+		<property name="userName" type="string">
+			<column name="userName" length="50" not-null="true" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" length="50" not-null="true" />
+		</property>
+		<property name="emailId" type="string">
+			<column name="emailId" length="50" not-null="true" />
+		</property>
+		<property name="mobile" type="string">
+			<column name="mobile" length="20" not-null="true" />
+		</property>
+		<property name="phone" type="string">
+			<column name="phone" length="20" />
+		</property>
+		<property name="addrLine1" type="string">
+			<column name="addrLine1" length="200" not-null="true" />
+		</property>
+		<property name="addrLine2" type="string">
+			<column name="addrLine2" length="200" />
+		</property>
+	</class>
+</hibernate-mapping>

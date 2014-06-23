@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 5, 2014 11:23:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+	<class name="com.espousetechnology.eappartment.mapping.regd.Tenantdetails"
+		table="tenantdetails" catalog="apartmentdb">
+		<id name="flatNo" type="string">
+			<column name="flatNo" length="20" />
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="string">
+			<column name="name" length="50" />
+		</property>
+		<property name="address" type="string">
+			<column name="address" length="200" />
+		</property>
+		<property name="flatOwnerName" type="string">
+			<column name="flatOwnerName" length="50" />
+		</property>
+		<property name="floorNo" type="string">
+			<column name="floorNo" length="10" />
+		</property>
+		<property name="block" type="string">
+			<column name="block" length="10" />
+		</property>
+		<property name="buildingName" type="string">
+			<column name="buildingName" length="100" />
+		</property>
+		<property name="dateOfRegistration" type="date">
+			<column name="dateOfRegistration" length="10" />
+		</property>
+		<property name="dateOfPossession" type="date">
+			<column name="dateOfPossession" length="10" />
+		</property>
+		<property name="dateOfVacation" type="date">
+			<column name="dateOfVacation" length="10" />
+		</property>
+		<property name="builtUpArea" type="string">
+			<column name="builtUpArea" length="100" />
+		</property>
+		<property name="bbmpTaxNo" type="string">
+			<column name="bbmpTaxNo" length="100" />
+		</property>
+		<property name="electricityNo" type="string">
+			<column name="electricityNo" length="100" />
+		</property>
+		<property name="bwssbNo" type="string">
+			<column name="bwssbNo" length="100" />
+		</property>
+		<property name="regNoTwoWheeler" type="string">
+			<column name="regNoTwoWheeler" length="100" />
+		</property>
+		<property name="regNoFourWheeler" type="string">
+			<column name="regNoFourWheeler" length="100" />
+		</property>
+	</class>
+</hibernate-mapping>

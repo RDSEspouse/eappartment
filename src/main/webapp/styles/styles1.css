@@ -1,0 +1,44 @@
+#wrapper {
+	
+}
+
+#header {
+	
+}
+
+#body {
+	
+}
+
+#lpan {
+	width: 260px;
+	float: left;
+	background-color: silver;
+}
+
+#rpan {
+	width: 1000px;
+	float: right;
+	height: 500px;
+	background-color: #919191;
+}
+
+#span {
+	width: 230px;
+	height: 500px;
+	float: left;
+	color: #90C;
+	background-color: #8080FF;
+	border-radius: 10px;
+	border: 4px #0000FF ridge;
+}
+
+#smpan {
+	width: 950px;
+	border-radius: 10px;
+	height: 500px;
+	float: right;
+	border: 4px #0000FF ridge;
+	background-color: #FF62FF;
+	resize: vertical;
+}

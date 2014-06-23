@@ -1,0 +1,114 @@
+<!DOCTYPE struts-config PUBLIC
+       "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+       "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="loginForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="userType" type="java.lang.String" />
+			<form-property name="userId" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="regdForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="userType" type="java.lang.String" />
+			<form-property name="userName" type="java.lang.String" />
+			<form-property name="userId" type="java.lang.String" />
+			<form-property name="password" type="java.lang.String" />
+			<form-property name="emailId" type="java.lang.String" />
+			<form-property name="mobile" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="addrLine1" type="java.lang.String" />
+			<form-property name="addrLine2" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="addFlatOwnerForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="flatNo" type="java.lang.String" />
+			<form-property name="floorNo" type="java.lang.String" />
+			<form-property name="block" type="java.lang.String" />
+			<form-property name="buildingName" type="java.lang.String" />
+			<form-property name="dateOfRegistration" type="java.lang.String" />
+			<form-property name="dateOfPossesion" type="java.lang.String" />
+			<form-property name="builtUpArea" type="java.lang.String" />
+			<form-property name="bbmpTaxNo" type="java.lang.String" />
+			<form-property name="electricityNo" type="java.lang.String" />
+			<form-property name="bwssbNo" type="java.lang.String" />
+			<form-property name="regNoTwoWheeler" type="java.lang.String" />
+			<form-property name="regNoFourWheeler" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="addTenantForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="flatOwner" type="java.lang.String" />
+			<form-property name="flatNo" type="java.lang.String" />
+			<form-property name="floorNo" type="java.lang.String" />
+			<form-property name="block" type="java.lang.String" />
+			<form-property name="buildingName" type="java.lang.String" />
+			<form-property name="dateOfRegistration" type="java.lang.String" />
+			<form-property name="dateOfPossesion" type="java.lang.String" />
+			<form-property name="dateOfVacation" type="java.lang.String" />
+			<form-property name="builtUpArea" type="java.lang.String" />
+			<form-property name="bbmpTaxNo" type="java.lang.String" />
+			<form-property name="electricityNo" type="java.lang.String" />
+			<form-property name="bwssbNo" type="java.lang.String" />
+			<form-property name="regNoTwoWheeler" type="java.lang.String" />
+			<form-property name="regNoFourWheeler" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="addDomesticHelperForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="flatOwnerOrTenantName" type="java.lang.String" />
+			<form-property name="flatNo" type="java.lang.String" />
+			<form-property name="floorNo" type="java.lang.String" />
+			<form-property name="block" type="java.lang.String" />
+			<form-property name="buildingName" type="java.lang.String" />
+			<form-property name="dateOfJoining" type="java.lang.String" />
+			<form-property name="dateOfLeaving" type="java.lang.String" />
+		</form-bean>
+	</form-beans>
+	<action-mappings>
+		<action path="/home" forward="base" />
+		<action path="/pricing" forward="/pricing.html" />
+		<action path="/portfolio" forward="/portfolio.html" />
+		<action path="/register" forward="regd.registration" />
+		
+		<action path="/regd.submit" name="regdForm"
+				type="com.espousetechnology.eappartment.action.regd.RegistrationAction" >
+			<forward name="success" path="master-content" />
+			<forward name="failure" path="regd.registration" />
+		</action>
+
+		<action path="/login" name="loginForm" 
+				type="com.espousetechnology.eappartment.action.regd.LoginAction" >
+			<forward name="success" path="master-content" />
+			<forward name="failure" path="/home" />
+		</action>
+		
+		<action path="/add.flatowner" forward="regd.flat-owner-form" />
+		<action path="/register.flatowner" name="addFlatOwnerForm" 
+				type="com.espousetechnology.eappartment.action.regd.RegistrationFlatOwnerAction">
+			<forward name="success" path="master-success" />
+			<forward name="failure" path="master-error" />
+		</action>
+		
+		<action path="/add.tenant" forward="regd.flat-tenant-form" />
+		<action path="/register.tenant" name="addTenantForm" 
+				type="com.espousetechnology.eappartment.action.regd.RegistrationTenantAction">
+			<forward name="success" path="master-success" />
+			<forward name="failure" path="master-error" />
+		</action>
+		
+		<action path="/add.domestichelper" forward="regd.flat-domestichelper-form" />
+		<action path="/register.domestichelper" name="addDomesticHelperForm" 
+				type="com.espousetechnology.eappartment.action.regd.RegistrationDomesticHelperAction">
+			<forward name="success" path="master-success" />
+			<forward name="failure" path="master-error" />
+		</action>
+		
+		<action path="/contact" forward="/contact.html" />
+	</action-mappings>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>
